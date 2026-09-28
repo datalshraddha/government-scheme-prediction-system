@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yojana Finder: government schemes you qualify for</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Public+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="intro">
+      <p class="brand"><span class="dot"></span>Yojana Finder</p>
+      <h1>Find the government schemes you already qualify for.</h1>
+      <p class="lead">Tell us your age, gender, category, income and occupation. We check them against the eligibility rules of central and Maharashtra schemes and show what you can apply for today.</p>
+      <p class="facts"><b id="st-schemes">-</b> schemes in the database &nbsp;|&nbsp; <b id="st-searches">-</b> searches so far</p>
+    </div>
+
+    <form id="form" class="slip" novalidate>
+      <h2>Your details</h2>
+      <label class="f"><span>Age</span>
+        <input type="number" name="age" min="0" max="120" placeholder="e.g. 21" required></label>
+
+      <fieldset class="f"><legend>Gender</legend>
+        <div class="pills">
+          <label><input type="radio" name="gender" value="FEMALE" required><span>Female</span></label>
+          <label><input type="radio" name="gender" value="MALE"><span>Male</span></label>
+          <label><input type="radio" name="gender" value="OTHER"><span>Other</span></label>
+        </div></fieldset>
+
+      <fieldset class="f"><legend>Category</legend>
+        <div class="pills">
+          <label><input type="radio" name="caste" value="GEN" required><span>General</span></label>
+          <label><input type="radio" name="caste" value="OBC"><span>OBC</span></label>
+          <label><input type="radio" name="caste" value="SC"><span>SC</span></label>
+          <label><input type="radio" name="caste" value="ST"><span>ST</span></label>
+        </div></fieldset>
+
+      <label class="f"><span>Annual family income (Rs.)</span>
+        <input type="number" name="income" id="income" min="0" step="1000" placeholder="e.g. 200000" required>
+        <small id="income-hint">Total yearly income of your family</small></label>
+
+      <label class="f"><span>Occupation</span>
+        <select name="occupation" required>
+          <option value="" disabled selected>Choose one</option>
+          <option value="STUDENT">Student</option>
+          <option value="FARMER">Farmer</option>
+          <option value="WORKER">Worker or artisan</option>
+          <option value="ENTREPRENEUR">Business owner</option>
+          <option value="JOBSEEKER">Looking for work</option>
+          <option value="OTHER">Homemaker or other</option>
+        </select></label>
+
+      <button type="submit" id="go">Show my schemes</button>
+      <p id="err" class="err" role="alert" hidden></p>
+    </form>
+  </div>
+</header>
+
+<main class="wrap" id="results" hidden>
+  <div class="bar">
+    <div>
+      <h2 id="sum-title"></h2>
+      <p class="note">The score shows how closely a scheme is aimed at your profile. A higher score means the scheme is written for people like you.</p>
+    </div>
+    <button class="ghost" onclick="window.print()">Print or save as PDF</button>
+  </div>
+  <div id="chips" class="chips"></div>
+  <div id="list"></div>
+</main>
+
+<footer class="wrap foot">
+  <p>Eligibility here is indicative and based on public scheme guidelines. Rules and amounts change, so confirm on the official website before you apply.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
