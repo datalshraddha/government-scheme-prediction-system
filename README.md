@@ -1,4 +1,4 @@
-# Yojana Finder: Government Scheme Prediction System
+# Government Scheme Prediction System
 
 Web app that recommends government schemes from a person's age, gender, category (caste), annual family income and occupation.
 Stack: Java 17, JDBC, MySQL, JDK built-in HTTP server, HTML, CSS, JavaScript. No Tomcat, no Spring.
